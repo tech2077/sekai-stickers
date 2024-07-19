@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script>
+      const prod = RegExp("([1-9]{1,3}\.){3}[1-9]{1,3}|localhost|herokuapp\.com").test(window.location.host)
+      console.log("prod: " + prod)
+      if (prod && (window.location.protocol !== "https:")){
+        window.location.protocol = "https";
+      }
+    </script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
